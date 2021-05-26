@@ -1,0 +1,18 @@
+{
+  "name": "grpcnode",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "server": "node index.js",
+    "client": "node ./client/client.js",
+    "gen": "protoc -I=. ./protos/dummy.proto --js_out=import_style=commonjs,binary:./server --grpc_out=./server --plugin=protoc-gen-grpc=`which grpc_tools_node_protoc_plugin`"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "google-protobuf": "^3.17.1",
+    "grpc": "^1.24.10",
+    "grpc-tools": "^1.11.1"
+  }
+}
