@@ -4,11 +4,11 @@ const service = require('./server/protos/greet_grpc_pb');
 
 
 // implements the greet RPC method
-function greet(call, calback){
+function greet(call, callback){
     const greeting = new greets.GreetResponse();
 
     greeting.setResult(
-        `Hello ${call.request.getGreeting().getFirstName()}`
+        `Hello ${call.request.getGreeting().getFirstName()} ${call.request.getGreeting().getLastName()}`
     );
     callback(null, greeting);
 }
